@@ -36,4 +36,3 @@ public class SplashActivity extends AppCompatActivity {
         logoTimer.start();
     }
 }
-}

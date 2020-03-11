@@ -6,6 +6,8 @@ import android.os.Build;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.maugarciaf.employeemeeting.R;
+
 public class Tools {
 
     public static void setSystemBarColor(Activity act) {

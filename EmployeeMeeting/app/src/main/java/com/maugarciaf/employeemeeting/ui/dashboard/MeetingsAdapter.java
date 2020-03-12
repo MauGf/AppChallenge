@@ -13,43 +13,63 @@ import com.maugarciaf.employeemeeting.R;
 
 import java.util.List;
 
-public class MeetingsAdapter extends RecyclerView.Adapter<MeetingsAdapter.MeetingViewHolder> {
+public class MeetingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    Context context;
-    List<Meetings> meetingsList;
+    private static final int TYPE = 1;
+    private final Context context;
+    private final List<Object> listRecyclerItem;
 
-    public MeetingsAdapter(Context context, List<Meetings> meetingsList) {
+    public MeetingsAdapter(Context context, List<Object> listRecyclerItem) {
         this.context = context;
-        this.meetingsList = meetingsList;
+        this.listRecyclerItem = listRecyclerItem;
+    }
+
+
+    public class ItemViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView name;
+        private TextView meetingTime;
+
+        public ItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+            name = (TextView) itemView.findViewById(R.id.nameTexID);
+            meetingTime = (TextView) itemView.findViewById(R.id.meetingsHourss);
+        }
     }
 
     @NonNull
     @Override
-    public MeetingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_items_meetings,parent, false);
-        return new MeetingViewHolder(itemView);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        switch (i) {
+            case TYPE:
+            default:
+                View layoutView = LayoutInflater.from(viewGroup.getContext()).inflate(
+                        R.layout.row_items_meetings, viewGroup, false);
+
+                return new ItemViewHolder((layoutView));
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MeetingViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
-        holder.nameTex.setText(meetingsList.get(position).getNameEmploye());
-       // holder.hoursText.setText(meetingsList.get(position).getMeetingHours());
+        int viewType = getItemViewType(i);
+
+        switch (viewType) {
+            case TYPE:
+            default:
+
+                ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
+                Meetings meetings = (Meetings) listRecyclerItem.get(i);
+
+                itemViewHolder.name.setText(meetings.getNameEmploye());
+                itemViewHolder.meetingTime.setText(meetings.getMeetingHours());
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        return meetingsList.size();
-    }
-
-    public class MeetingViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView nameTex, hoursText;
-        public MeetingViewHolder(@NonNull View itemView) {
-            super(itemView);
-            nameTex = itemView.findViewById(R.id.nameTexID);
-            hoursText = itemView.findViewById(R.id.meetingsHourss);
-
-        }
+        return listRecyclerItem.size();
     }
 }

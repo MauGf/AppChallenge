@@ -2,12 +2,12 @@ package com.maugarciaf.employeemeeting.ui.dashboard;
 
 public class Meetings {
     private String nameEmploye;
-    private int meetingHours;
+    private String meetingHours;
 
     public Meetings() {
     }
 
-    public Meetings(String nameEmploye, int meetingHours) {
+    public Meetings(String nameEmploye, String meetingHours) {
         this.nameEmploye = nameEmploye;
         this.meetingHours = meetingHours;
     }
@@ -20,11 +20,11 @@ public class Meetings {
         this.nameEmploye = nameEmploye;
     }
 
-    public int getMeetingHours() {
+    public String getMeetingHours() {
         return meetingHours;
     }
 
-    public void setMeetingHours(int meetingHours) {
+    public void setMeetingHours(String meetingHours) {
         this.meetingHours = meetingHours;
     }
 }

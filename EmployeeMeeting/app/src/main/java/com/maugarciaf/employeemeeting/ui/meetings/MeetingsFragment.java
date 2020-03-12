@@ -1,4 +1,4 @@
-package com.maugarciaf.employeemeeting.ui.dashboard;
+package com.maugarciaf.employeemeeting.ui.meetings;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -6,21 +6,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.maugarciaf.employeemeeting.R;
-import com.maugarciaf.employeemeeting.ui.home.HomeViewModel;
-import com.maugarciaf.employeemeeting.utils.MeetingJSONData;
+import com.maugarciaf.employeemeeting.adapter.MeetingsAdapter;
+import com.maugarciaf.employeemeeting.model.MeetingsPojo;
+import com.maugarciaf.employeemeeting.ui.timefree.HomeViewModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +32,7 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class DashboardFragment extends Fragment {
+public class MeetingsFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
     private HomeViewModel homeViewModel;
@@ -77,8 +74,8 @@ public class DashboardFragment extends Fragment {
                 String name = itemObj.getString("name");
                 String meetingTime = itemObj.getString("meetings");
 
-                Meetings meetings = new Meetings(name,meetingTime);
-                meetingsList.add(meetings);
+                MeetingsPojo meetingsPojo = new MeetingsPojo (name,meetingTime);
+                meetingsList.add(meetingsPojo);
             }
 
         } catch (JSONException | IOException e) {

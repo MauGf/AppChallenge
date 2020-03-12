@@ -1,15 +1,14 @@
-package com.maugarciaf.employeemeeting.ui.dashboard;
+package com.maugarciaf.employeemeeting.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.maugarciaf.employeemeeting.R;
+import com.maugarciaf.employeemeeting.model.MeetingsPojo;
 
 import java.util.List;
 
@@ -23,7 +22,6 @@ public class MeetingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.context = context;
         this.listRecyclerItem = listRecyclerItem;
     }
-
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
 
@@ -60,10 +58,10 @@ public class MeetingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             default:
 
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
-                Meetings meetings = (Meetings) listRecyclerItem.get(i);
+                MeetingsPojo meetingsPojo = (MeetingsPojo) listRecyclerItem.get(i);
 
-                itemViewHolder.name.setText(meetings.getNameEmploye());
-                itemViewHolder.meetingTime.setText(meetings.getMeetingHours());
+                itemViewHolder.name.setText(meetingsPojo.getNameEmploye());
+                itemViewHolder.meetingTime.setText(meetingsPojo.getMeetingHours());
         }
 
     }

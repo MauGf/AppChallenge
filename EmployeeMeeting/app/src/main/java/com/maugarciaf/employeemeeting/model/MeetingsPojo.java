@@ -1,13 +1,13 @@
-package com.maugarciaf.employeemeeting.ui.dashboard;
+package com.maugarciaf.employeemeeting.model;
 
-public class Meetings {
+public class MeetingsPojo {
     private String nameEmploye;
     private String meetingHours;
 
-    public Meetings() {
+    public MeetingsPojo() {
     }
 
-    public Meetings(String nameEmploye, String meetingHours) {
+    public MeetingsPojo(String nameEmploye, String meetingHours) {
         this.nameEmploye = nameEmploye;
         this.meetingHours = meetingHours;
     }

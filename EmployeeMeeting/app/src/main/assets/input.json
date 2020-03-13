@@ -4,8 +4,8 @@
     "meeting1": "1:30PM",
     "meeting2": "2:30PM",
     "meeting3": "6PM",
-    "meeting4": " ",
-    "meeting5": " "
+    "meeting4": "free time",
+    "meeting5": "free time "
   },
   {
     "name": "Paul",
@@ -21,7 +21,7 @@
     "meeting2": "9:30AM",
     "meeting3": "12:30PM",
     "meeting4": "3PM",
-    "meeting5": " "
+    "meeting5": "free time "
   },
   {
     "name": "Luis",
@@ -29,15 +29,15 @@
     "meeting2": "1:30PM",
     "meeting3": "3PM",
     "meeting4": "3:30PM",
-    "meeting5": " "
+    "meeting5": "free time "
   },
   {
     "name": "Jairo",
     "meeting1": "8AM",
     "meeting2": "9AM",
     "meeting3": "6PM",
-    "meeting4": " ",
-    "meeting5": " "
+    "meeting4": "free time ",
+    "meeting5": "free time"
   },
   {
     "name": "Sonya",
@@ -45,6 +45,6 @@
     "meeting2":"12:30PM",
     "meeting3":"1:30PM",
     "meeting4":"3:30PM",
-    "meeting5": " "
+    "meeting5": "free time "
   }
 ]

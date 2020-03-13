@@ -35,7 +35,7 @@ import java.util.Objects;
 public class MeetingsFragment extends Fragment {
 
     private List<Object> meetingsList = new ArrayList<> ();
-    private static final String TAG = "MainActivity";
+    private static final String TAG1 = "MainActivity";
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -43,7 +43,7 @@ public class MeetingsFragment extends Fragment {
 
         View root = inflater.inflate (R.layout.fragment_meetings, container, false);
 
-        RecyclerView recyclerView = root.findViewById (R.id.showtime_recycleview);
+        RecyclerView recyclerView = root.findViewById (R.id.showmeetings_recycleview);
         recyclerView.setHasFixedSize (true);
         recyclerView.setLayoutManager (new LinearLayoutManager (getActivity ()));
 
@@ -77,7 +77,7 @@ public class MeetingsFragment extends Fragment {
             }
 
         } catch (JSONException | IOException e) {
-            Log.d (TAG, "addItemsFromJSON: ", e);
+            Log.d (TAG1, "addItemsFromJSON: ", e);
         }
     }
 

@@ -16,4 +16,6 @@
     <string name="update_title">Update</string>
     <string name="last_update">Last update: March 13, 2020</string>
     <string name="info_title">Information</string>
+    <string name="busy">Busy</string>
+    <string name="Available">Available</string>
 </resources>

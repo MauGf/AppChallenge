@@ -1,62 +1,77 @@
 package com.maugarciaf.employeemeeting.adapter;
 
 import android.content.Context;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.RequiresApi;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.maugarciaf.employeemeeting.R;
-import com.maugarciaf.employeemeeting.model.ShowTimeModalClass;
+import com.maugarciaf.employeemeeting.model.EmployeeTimeClass;
+
 
 import java.util.List;
 
 import me.gujun.android.taggroup.TagGroup;
 
-public class FreeTimeRecyclerAdapter extends RecyclerView.Adapter<FreeTimeRecyclerAdapter.MyViewHolder> {
-    Context context;
-    private List<ShowTimeModalClass> showTimeModalClasses;
+public class FreeTimeRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    private static final int TYPE = 2;
+    private final List<Object> listRecyclerItem;
 
-    public FreeTimeRecyclerAdapter(Context mainActivityContacts, List<ShowTimeModalClass> listModalClassList) {
-        this.showTimeModalClasses = listModalClassList;
-        this.context = mainActivityContacts;
+    public FreeTimeRecyclerAdapter (Context context, List<Object> listRecyclerItem2) {
+        this.listRecyclerItem = listRecyclerItem2;
+    }
+
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView time;
+        TagGroup employees;
+
+
+        ItemViewHolder(@NonNull View itemView) {
+            super (itemView);
+            time = (TextView) itemView.findViewById (R.id.time);
+            employees = (TagGroup) itemView.findViewById (R.id.employees);
+        }
+    }
+
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        switch (i) {
+            case TYPE:
+            default:
+                View layoutView = LayoutInflater.from (viewGroup.getContext ()).inflate (
+                        R.layout.row_items_freetime, viewGroup, false);
+
+                return new ItemViewHolder ((layoutView));
+        }
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        final View itemView = LayoutInflater.from (parent.getContext ())
-                .inflate (R.layout.row_items_freetime, parent, false);
-        return new MyViewHolder (itemView);
-    }
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    @Override
-    public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        ShowTimeModalClass modalClass = showTimeModalClasses.get (position);
-        holder.name.setText (modalClass.getName ());
+        int viewType = getItemViewType (i);
 
-        holder.tagGroup.setTags (new String[]{"10:20 AM", "01:20 PM", "04:20 PM", "07:20 PM", "10:20 PM"});
+        switch (viewType) {
+            case TYPE:
+            default:
+
+                ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
+                EmployeeTimeClass employeeTimeClass = (EmployeeTimeClass) listRecyclerItem.get (i);
+
+                itemViewHolder.time.setText (employeeTimeClass.getTime ());
+                itemViewHolder.employees.setTags (new String[]{employeeTimeClass.getEmployee1 (),employeeTimeClass.getEmployee2 (),employeeTimeClass.getEmployee3 (),employeeTimeClass.getEmployee4 (),employeeTimeClass.getEmployee5 (),employeeTimeClass.getEmployee6 ()});
+          //holder.tagGroup.setTags(new String[]{"10:20 AM", "01:20 PM", "04:20 PM","07:20 PM","10:20 PM"});
+
+        }
     }
 
     @Override
     public int getItemCount() {
-        return showTimeModalClasses.size ();
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        TextView name;
-        TagGroup tagGroup;
-
-        public MyViewHolder(View view) {
-            super (view);
-
-            name = (TextView) view.findViewById (R.id.name);
-            tagGroup = (TagGroup) view.findViewById (R.id.tag_group);
-        }
+        return listRecyclerItem.size ();
     }
 }

@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:text="8 AM"
+                android:text="@string/time_row"
                 android:textColor="#263238"
                 android:textSize="16sp" />
 
@@ -52,7 +52,7 @@
                 android:id="@+id/txt_available"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Available Employyes"
+                android:text="@string/available_employe"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="12sp" />
 

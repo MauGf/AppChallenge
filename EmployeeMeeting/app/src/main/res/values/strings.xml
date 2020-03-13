@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Employee Meetings</string>
-    <string name="title_home">Free Time</string>
-    <string name="title_dashboard">Scheduled Meetings</string>
-    <string name="title_notifications">About</string>
+    <string name="title_timefree">Free Time</string>
+    <string name="title_meetings">Scheduled Meetings</string>
+    <string name="title_about">About</string>
     <string name="splash_subtitle">Task Easy Code Challenge App</string>
     <string name="meeting_title">Meetings</string>
     <string name="meetings_subtitle">Display time</string>

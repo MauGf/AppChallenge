@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.maugarciaf.employeemeeting.ui.timefree.FreeTimeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_timefree" />
+    app:startDestination="@+id/navigation_meetings">
 
     <fragment
         android:id="@+id/navigation_meetings"
         android:name="com.maugarciaf.employeemeeting.ui.meetings.MeetingsFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_meetings"
         tools:layout="@layout/fragment_meetings" />
+
+    <fragment
+        android:id="@+id/navigation_timefree"
+        android:name="com.maugarciaf.employeemeeting.ui.timefree.FreeTimeFragment"
+        android:label="@string/title_timefree"
+        tools:layout="@layout/fragment_timefree" />
 
     <fragment
         android:id="@+id/navigation_about"
         android:name="com.maugarciaf.employeemeeting.ui.about.AboutFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_about"
         tools:layout="@layout/fragment_about" />
 </navigation>

@@ -19,10 +19,10 @@ import me.gujun.android.taggroup.TagGroup;
 
 public class FreeTimeRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private static final int TYPE = 2;
-    private final List<Object> listRecyclerItem;
+    private final List<Object> listRecyclerItem2;
 
     public FreeTimeRecyclerAdapter (Context context, List<Object> listRecyclerItem2) {
-        this.listRecyclerItem = listRecyclerItem2;
+        this.listRecyclerItem2 = listRecyclerItem2;
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -61,17 +61,16 @@ public class FreeTimeRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             default:
 
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
-                EmployeeTimeClass employeeTimeClass = (EmployeeTimeClass) listRecyclerItem.get (i);
+                EmployeeTimeClass employeeTimeClass = (EmployeeTimeClass) listRecyclerItem2.get (i);
 
                 itemViewHolder.time.setText (employeeTimeClass.getTime ());
-                itemViewHolder.employees.setTags (new String[]{employeeTimeClass.getEmployee1 (),employeeTimeClass.getEmployee2 (),employeeTimeClass.getEmployee3 (),employeeTimeClass.getEmployee4 (),employeeTimeClass.getEmployee5 (),employeeTimeClass.getEmployee6 ()});
-          //holder.tagGroup.setTags(new String[]{"10:20 AM", "01:20 PM", "04:20 PM","07:20 PM","10:20 PM"});
+             itemViewHolder.employees.setTags (new String[]{employeeTimeClass.getEmployee1 (),employeeTimeClass.getEmployee2 (),employeeTimeClass.getEmployee3 (),employeeTimeClass.getEmployee4 (),employeeTimeClass.getEmployee5 (),employeeTimeClass.getEmployee6 ()});
 
         }
     }
 
     @Override
     public int getItemCount() {
-        return listRecyclerItem.size ();
+        return listRecyclerItem2.size ();
     }
 }

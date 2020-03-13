@@ -42,9 +42,9 @@ public class FreeTimeFragment extends Fragment {
 
         RecyclerView recyclerView = root.findViewById (R.id.showtimes_recycleview);
         recyclerView.setHasFixedSize (true);
-        recyclerView.setLayoutManager (new LinearLayoutManager (getActivity ()));
+        recyclerView.setLayoutManager (new LinearLayoutManager (getContext ()));
 
-        FreeTimeRecyclerAdapter mAdapter2 = new FreeTimeRecyclerAdapter (getActivity (), employeeList);
+        FreeTimeRecyclerAdapter mAdapter2 = new FreeTimeRecyclerAdapter (getContext (), employeeList);
         recyclerView.setAdapter (mAdapter2);
 
         addItemsFromJSON2 ();
@@ -63,19 +63,19 @@ public class FreeTimeFragment extends Fragment {
                 JSONObject itemObj2 = jsonArray.getJSONObject (i);
 
                 String time = itemObj2.getString ("time");
-                String employee1 = itemObj2.getString ("employee1");
-                String employee2 = itemObj2.getString ("employee2");
-                String employee3 = itemObj2.getString ("employee3");
-                String employee4 = itemObj2.getString ("employee4");
-                String employee5 = itemObj2.getString ("employee5");
-                String employee6 = itemObj2.getString ("employee6");
+                String employeeTime1 = itemObj2.getString ("employee1");
+                String employeeTime2 = itemObj2.getString ("employee2");
+                String employeeTime3 = itemObj2.getString ("employee3");
+                String employeeTime4 = itemObj2.getString ("employee4");
+                String employeeTime5 = itemObj2.getString ("employee5");
+                String employeeTime6 = itemObj2.getString ("employee6");
 
-              EmployeeTimeClass employeeTimeClass = new EmployeeTimeClass (time, employee1, employee2, employee3, employee4, employee5,employee6);
+              EmployeeTimeClass employeeTimeClass = new EmployeeTimeClass (time, employeeTime1, employeeTime2, employeeTime3, employeeTime4, employeeTime5,employeeTime6);
                 employeeList.add (employeeTimeClass );
             }
 
         } catch (JSONException | IOException e) {
-            Log.d (TAG, "addItemsFromJSON: ", e);
+            Log.d (TAG, "addItemsFromJSON2: ", e);
         }
     }
 
@@ -86,7 +86,7 @@ public class FreeTimeFragment extends Fragment {
         StringBuilder builder = new StringBuilder ();
         try {
             String jsonString = null;
-            inputStream = Objects.requireNonNull (getContext ()).getAssets ().open ("ouput.json");
+            inputStream = Objects.requireNonNull (getContext ()).getAssets ().open ("output.json");
             BufferedReader bufferedReader = new BufferedReader (
                     new InputStreamReader (inputStream, StandardCharsets.UTF_8));
 

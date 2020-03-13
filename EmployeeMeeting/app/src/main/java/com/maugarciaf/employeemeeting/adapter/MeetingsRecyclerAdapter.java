@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.maugarciaf.employeemeeting.R;
-import com.maugarciaf.employeemeeting.model.MeetingsPojo;
+import com.maugarciaf.employeemeeting.model.MeetingsClass;
 
 import java.util.List;
 
@@ -17,23 +17,21 @@ import me.gujun.android.taggroup.TagGroup;
 public class MeetingsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE = 1;
-    private final Context context;
     private final List<Object> listRecyclerItem;
 
     public MeetingsRecyclerAdapter(Context context, List<Object> listRecyclerItem) {
-        this.context = context;
         this.listRecyclerItem = listRecyclerItem;
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder {
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
-        TagGroup meetingTime1;
+        TagGroup meetingTimes;
 
-        public ItemViewHolder(@NonNull View itemView) {
+        ItemViewHolder(@NonNull View itemView) {
             super (itemView);
             name = (TextView) itemView.findViewById (R.id.nameTexID);
-            meetingTime1 = (TagGroup) itemView.findViewById (R.id.meetings);
+            meetingTimes = (TagGroup) itemView.findViewById (R.id.meetings);
         }
     }
 
@@ -60,10 +58,10 @@ public class MeetingsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             default:
 
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
-                MeetingsPojo meetingsPojo = (MeetingsPojo) listRecyclerItem.get (i);
+                MeetingsClass meetingsClass = (MeetingsClass) listRecyclerItem.get (i);
 
-                itemViewHolder.name.setText (meetingsPojo.getName ());
-                itemViewHolder.meetingTime1.setTags (new String[]{meetingsPojo.getMeeting1 (), meetingsPojo.getMeeting2 (), meetingsPojo.getMeeting3 (), meetingsPojo.getMeeting4 (), meetingsPojo.getMeeting5 ()});
+                itemViewHolder.name.setText (meetingsClass.getName ());
+                itemViewHolder.meetingTimes.setTags (new String[]{meetingsClass.getMeeting1 (), meetingsClass.getMeeting2 (), meetingsClass.getMeeting3 (), meetingsClass.getMeeting4 (), meetingsClass.getMeeting5 ()});
                 //holder.tagGroup.setTags(new String[]{"10:20 AM", "01:20 PM", "04:20 PM","07:20 PM","10:20 PM"});
 
         }

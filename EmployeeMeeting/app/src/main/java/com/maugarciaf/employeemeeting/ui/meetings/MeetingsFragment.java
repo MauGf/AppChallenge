@@ -10,13 +10,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.maugarciaf.employeemeeting.R;
 import com.maugarciaf.employeemeeting.adapter.MeetingsRecyclerAdapter;
-import com.maugarciaf.employeemeeting.model.MeetingsPojo;
+import com.maugarciaf.employeemeeting.model.MeetingsClass;
 
 
 import org.json.JSONArray;
@@ -27,6 +26,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -34,10 +34,8 @@ import java.util.Objects;
 
 public class MeetingsFragment extends Fragment {
 
-    private RecyclerView recyclerView;
     private List<Object> meetingsList = new ArrayList<> ();
     private static final String TAG = "MainActivity";
-    private MeetingsRecyclerAdapter mAdapter;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -45,12 +43,11 @@ public class MeetingsFragment extends Fragment {
 
         View root = inflater.inflate (R.layout.fragment_meetings, container, false);
 
-        recyclerView = root.findViewById (R.id.showtime_recycleview);
+        RecyclerView recyclerView = root.findViewById (R.id.showtime_recycleview);
         recyclerView.setHasFixedSize (true);
         recyclerView.setLayoutManager (new LinearLayoutManager (getActivity ()));
 
-
-        mAdapter = new MeetingsRecyclerAdapter (getActivity (), meetingsList);
+        MeetingsRecyclerAdapter mAdapter = new MeetingsRecyclerAdapter (getActivity (), meetingsList);
         recyclerView.setAdapter (mAdapter);
         addItemsFromJSON ();
 
@@ -75,8 +72,8 @@ public class MeetingsFragment extends Fragment {
                 String meetingTime4 = itemObj.getString ("meeting4");
                 String meetingTime5 = itemObj.getString ("meeting5");
 
-                MeetingsPojo meetingsPojo = new MeetingsPojo (name, meetingTime1, meetingTime2, meetingTime3, meetingTime4, meetingTime5);
-                meetingsList.add (meetingsPojo);
+                MeetingsClass meetingsClass = new MeetingsClass (name, meetingTime1, meetingTime2, meetingTime3, meetingTime4, meetingTime5);
+                meetingsList.add (meetingsClass);
             }
 
         } catch (JSONException | IOException e) {
@@ -93,7 +90,7 @@ public class MeetingsFragment extends Fragment {
             String jsonString = null;
             inputStream = Objects.requireNonNull (getContext ()).getAssets ().open ("input.json");
             BufferedReader bufferedReader = new BufferedReader (
-                    new InputStreamReader (inputStream, "UTF-8"));
+                    new InputStreamReader (inputStream, StandardCharsets.UTF_8));
 
             while ((jsonString = bufferedReader.readLine ()) != null) {
                 builder.append (jsonString);

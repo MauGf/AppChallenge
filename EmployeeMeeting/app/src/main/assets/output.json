@@ -1,0 +1,129 @@
+[
+  {
+    "time": "8AM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3": "Luis"
+  },
+  {
+    "time": "8:30AM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3": "Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+  },
+  {
+    "time": "9AM",
+    "employee1": "Kyle",
+    "employee2": "Alex",
+    "employee3": "Sonya"
+  },
+  {
+    "time": "9:30AM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3": "Luis",
+    "employee4": "Jairo",
+    "employee5": "Sonya"
+
+  },
+  {
+    "time": "10AM",
+    "employee1":  "Kyle",
+    "employee2": "Paul",
+    "employee3": "Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+
+  },
+  {
+    "time": "10:30AM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3":"Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+  },
+  {
+    "time": "11AM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3":  "Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+
+  },
+  {
+    "time": "11:30AM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3": "Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+  },
+  {
+    "time": "1PM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3": "Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+  },
+  {
+    "time": "2PM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3": "Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+  },
+  {
+    "time": "2:30PM",
+    "employee1": "Paul",
+    "employee2": "Alex",
+    "employee3": "Luis",
+    "employee4": "Jairo",
+    "employee5": "Sonya"
+  },
+  {
+    "time": "3PM",
+    "employee1": "Kyle",
+    "employee2": "Jairo",
+    "employee3": "Sonya"
+
+  },
+  {
+    "time": "3:30PM",
+    "employee1": "Kyle",
+    "employee2": "Alex",
+    "employee3": "Jairo"
+
+  },
+  {
+    "time": "4PM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3":  "Alex",
+    "employee4":  "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+
+  },
+  {
+    "time": "4:30PM",
+    "employee1": "Kyle",
+    "employee2": "Paul",
+    "employee3": "Alex",
+    "employee4": "Luis",
+    "employee5": "Jairo",
+    "employee6": "Sonya"
+  }
+]

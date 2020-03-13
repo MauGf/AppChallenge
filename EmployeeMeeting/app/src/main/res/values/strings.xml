@@ -18,4 +18,6 @@
     <string name="info_title">Information</string>
     <string name="busy">Busy</string>
     <string name="Available">Available</string>
+    <string name="available_employe">Available Employyes</string>
+    <string name="time_row">8 AM</string>
 </resources>

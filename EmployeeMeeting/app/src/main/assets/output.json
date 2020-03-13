@@ -3,7 +3,11 @@
     "time": "8AM",
     "employee1": "Kyle",
     "employee2": "Paul",
-    "employee3": "Luis"
+    "employee3": "Luis",
+    "employee4": "",
+    "employee5": "",
+    "employee6": ""
+
   },
   {
     "time": "8:30AM",
@@ -18,7 +22,10 @@
     "time": "9AM",
     "employee1": "Kyle",
     "employee2": "Alex",
-    "employee3": "Sonya"
+    "employee3": "Sonya",
+    "employee4": "",
+    "employee5": "",
+    "employee6": ""
   },
   {
     "time": "9:30AM",
@@ -26,8 +33,8 @@
     "employee2": "Paul",
     "employee3": "Luis",
     "employee4": "Jairo",
-    "employee5": "Sonya"
-
+    "employee5": "Sonya",
+    "employee6": ""
   },
   {
     "time": "10AM",
@@ -97,15 +104,19 @@
     "time": "3PM",
     "employee1": "Kyle",
     "employee2": "Jairo",
-    "employee3": "Sonya"
-
+    "employee3": "Sonya",
+    "employee4": "",
+    "employee5": "",
+    "employee6": ""
   },
   {
     "time": "3:30PM",
     "employee1": "Kyle",
     "employee2": "Alex",
-    "employee3": "Jairo"
-
+    "employee3": "Jairo",
+    "employee4": "",
+    "employee5": "",
+    "employee6": ""
   },
   {
     "time": "4PM",

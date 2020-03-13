@@ -1,52 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clickable="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="9dp"
+    android:layout_marginRight="9dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginTop="5dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginRight="9dp"
+        android:paddingTop="16dp"
+        android:paddingLeft="14.5dp"
+        android:paddingBottom="18dp"
         android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingStart="14.5dp">
 
-        <TextView
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/ic_access_time_black_24dp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/available_time_label"
-            android:textColor="@color/black_54A" />
+            android:layout_marginLeft="11.7dp"
+            android:orientation="vertical"
+            android:layout_marginStart="11.7dp">
 
-        <EditText
-            android:id="@+id/et_date_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:backgroundTint="@color/black_54A"
-            android:clickable="true"
-            android:focusable="false"
-            android:inputType="none"
-            android:textColor="@color/black_54A"
-            tools:text="24/08/2017" />
+
+            <com.maugarciaf.employeemeeting.customfonts.CTextViewSansBold
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time Free"
+                android:textColor="#263238"
+                android:layout_marginBottom="14dp"
+                android:textSize="16sp" />
+
+            <me.gujun.android.taggroup.TagGroup
+                android:id="@+id/tag_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:atg_borderColor="#9d9d9d"
+                app:atg_borderStrokeWidth="1.5dp"
+                app:atg_horizontalPadding="12dp"
+                app:atg_horizontalSpacing="8dp"
+                app:atg_textColor="#9d9d9d"
+                app:atg_textSize="13sp"
+                app:atg_verticalPadding="7dp"
+                app:atg_verticalSpacing="10dp" />
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_available_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16sp"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        tools:listitem="@layout/item_available_time" />
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

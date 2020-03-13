@@ -1,73 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:layout_marginLeft="9dp"
+    android:layout_marginRight="9dp"
+    android:layout_marginBottom="12dp"
     android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="6dp"
-    card_view:cardPreventCornerOverlap="true"
-    >
+    app:cardElevation="6dp"
+    app:cardCornerRadius="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="5dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingTop="5dp"
-        >
+        android:layout_marginRight="9dp"
+        android:paddingTop="16dp"
+        android:paddingLeft="14.5dp"
+        android:paddingBottom="18dp"
+        android:orientation="horizontal"
+        android:paddingStart="14.5dp">
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/ic_access_time_black_24dp" />
+
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
+            android:id="@+id/titleID"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-            <LinearLayout
-                android:orientation="vertical"
+            android:layout_marginLeft="11.7dp"
+            android:orientation="vertical"
+            android:layout_marginStart="11.7dp">
+
+
+            <com.maugarciaf.employeemeeting.customfonts.CTextViewSansBold
+                android:id="@+id/nameTexID"
                 android:layout_width="wrap_content"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="fitXY"
-                    android:layout_margin="5dp"
-                    android:src="@mipmap/ic_launcher_round"
-                    android:id="@+id/imageView1ID" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp">
-                <TextView
-                    android:id="@+id/nameTexID"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="3dp"
-                    android:singleLine="true"
-                    android:text="Equipo"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#FFC107"
-                    android:textStyle="bold"/>
+                android:text="@string/meeting_title"
+                android:textColor="#263238"
+                android:layout_marginBottom="14dp"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/meetingsHourss"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="3dp"
-                    android:singleLine="false"
-                    android:text="Descripcion"
-                    android:textColor="@android:color/tertiary_text_light" />
-
-            </LinearLayout>
+            <me.gujun.android.taggroup.TagGroup
+                android:id="@+id/meetings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:atg_borderColor="#9d9d9d"
+                app:atg_borderStrokeWidth="1.5dp"
+                app:atg_horizontalPadding="12dp"
+                app:atg_horizontalSpacing="8dp"
+                app:atg_textColor="#9d9d9d"
+                app:atg_textSize="13sp"
+                app:atg_verticalPadding="7dp"
+                app:atg_verticalSpacing="10dp" />
         </LinearLayout>
-    </RelativeLayout>
+
+
+    </LinearLayout>
+
 </androidx.cardview.widget.CardView>

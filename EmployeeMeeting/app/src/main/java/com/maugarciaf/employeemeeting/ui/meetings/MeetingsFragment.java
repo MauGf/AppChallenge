@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.maugarciaf.employeemeeting.R;
-import com.maugarciaf.employeemeeting.adapter.MeetingsAdapter;
+import com.maugarciaf.employeemeeting.adapter.MeetingsRecyclerAdapter;
 import com.maugarciaf.employeemeeting.model.MeetingsPojo;
-import com.maugarciaf.employeemeeting.ui.timefree.HomeViewModel;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,73 +35,77 @@ import java.util.Objects;
 public class MeetingsFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
-    private HomeViewModel homeViewModel;
+
     private RecyclerView recyclerView;
-    private List<Object> meetingsList= new ArrayList<>();
+    private List<Object> meetingsList = new ArrayList<> ();
     private static final String TAG = "MainActivity";
-    private MeetingsAdapter mAdapter;
+    private MeetingsRecyclerAdapter mAdapter;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+                ViewModelProviders.of (this).get (DashboardViewModel.class);
+        View root = inflater.inflate (R.layout.fragment_meetings, container, false);
 
-        recyclerView = root.findViewById(R.id.showtime_recycleview);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView = root.findViewById (R.id.showtime_recycleview);
+        recyclerView.setHasFixedSize (true);
+        recyclerView.setLayoutManager (new LinearLayoutManager (getActivity ()));
 
 
-        mAdapter = new MeetingsAdapter(getActivity(), meetingsList);
-        recyclerView.setAdapter(mAdapter);
-        addItemsFromJSON();
+        mAdapter = new MeetingsRecyclerAdapter (getActivity (), meetingsList);
+        recyclerView.setAdapter (mAdapter);
+        addItemsFromJSON ();
 
-            return root;
+        return root;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void addItemsFromJSON() {
         try {
 
-            String jsonDataString = readJSONDataFromFile();
-            JSONArray jsonArray = new JSONArray(jsonDataString);
+            String jsonDataString = readJSONDataFromFile ();
+            JSONArray jsonArray = new JSONArray (jsonDataString);
 
-            for (int i=0; i<jsonArray.length(); ++i) {
+            for (int i = 0; i < jsonArray.length (); ++i) {
 
-                JSONObject itemObj = jsonArray.getJSONObject(i);
+                JSONObject itemObj = jsonArray.getJSONObject (i);
 
-                String name = itemObj.getString("name");
-                String meetingTime = itemObj.getString("meetings");
+                String name = itemObj.getString ("name");
+                String meetingTime1 = itemObj.getString ("meeting1");
+                String meetingTime2 = itemObj.getString ("meeting2");
+                String meetingTime3 = itemObj.getString ("meeting3");
+                String meetingTime4 = itemObj.getString ("meeting4");
+                String meetingTime5 = itemObj.getString ("meeting5");
 
-                MeetingsPojo meetingsPojo = new MeetingsPojo (name,meetingTime);
-                meetingsList.add(meetingsPojo);
+                MeetingsPojo meetingsPojo = new MeetingsPojo (name, meetingTime1, meetingTime2, meetingTime3, meetingTime4, meetingTime5);
+                meetingsList.add (meetingsPojo);
             }
 
         } catch (JSONException | IOException e) {
-            Log.d(TAG, "addItemsFromJSON: ", e);
+            Log.d (TAG, "addItemsFromJSON: ", e);
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    private String readJSONDataFromFile() throws IOException{
+    private String readJSONDataFromFile() throws IOException {
 
         InputStream inputStream = null;
-        StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder ();
         try {
             String jsonString = null;
-            inputStream = Objects.requireNonNull(getContext()).getAssets().open("input.json");
-            BufferedReader bufferedReader = new BufferedReader(
-                    new InputStreamReader(inputStream, "UTF-8"));
+            inputStream = Objects.requireNonNull (getContext ()).getAssets ().open ("input.json");
+            BufferedReader bufferedReader = new BufferedReader (
+                    new InputStreamReader (inputStream, "UTF-8"));
 
-            while ((jsonString = bufferedReader.readLine()) != null) {
-                builder.append(jsonString);
+            while ((jsonString = bufferedReader.readLine ()) != null) {
+                builder.append (jsonString);
             }
         } finally {
             if (inputStream != null) {
-                inputStream.close();
+                inputStream.close ();
             }
         }
-        return new String(builder);
+        return new String (builder);
     }
 }

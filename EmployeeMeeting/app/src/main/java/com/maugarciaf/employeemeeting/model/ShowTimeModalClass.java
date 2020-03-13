@@ -5,8 +5,6 @@ public class ShowTimeModalClass {
     String name;
 
     public ShowTimeModalClass(){
-
-
     }
 
     public ShowTimeModalClass(String name) {

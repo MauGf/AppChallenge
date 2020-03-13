@@ -34,8 +34,6 @@ import java.util.Objects;
 
 public class MeetingsFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
-
     private RecyclerView recyclerView;
     private List<Object> meetingsList = new ArrayList<> ();
     private static final String TAG = "MainActivity";
@@ -44,8 +42,7 @@ public class MeetingsFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of (this).get (DashboardViewModel.class);
+
         View root = inflater.inflate (R.layout.fragment_meetings, container, false);
 
         recyclerView = root.findViewById (R.id.showtime_recycleview);

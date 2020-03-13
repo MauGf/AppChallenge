@@ -24,7 +24,7 @@ public class FreeTimeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.temporal, container, false);
+        View root = inflater.inflate(R.layout.fragment_meetings, container, false);
 
         showtime_recycleview = (RecyclerView) root.findViewById(R.id.showtime_recycleview);
 

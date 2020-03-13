@@ -1,9 +1,19 @@
 <resources>
-    <string name="app_name">Employee Meeting</string>
-    <string name="title_home">Available Time</string>
-    <string name="title_dashboard">Scheduled meetings</string>
+    <string name="app_name">Employee Meetings</string>
+    <string name="title_home">Free Time</string>
+    <string name="title_dashboard">Scheduled Meetings</string>
     <string name="title_notifications">About</string>
     <string name="splash_subtitle">Task Easy Code Challenge App</string>
     <string name="meeting_title">Meetings</string>
     <string name="meetings_subtitle">Display time</string>
+    <string name="num_version">1.0</string>
+    <string name="version">Version</string>
+    <string name="about_info_app">This application has been developed from a code challenge proposed by the company Task Easy</string>
+    <string name="mail">maugarciaflores@gmail.com</string>
+    <string name="countr">El Salvador C.A</string>
+    <string name="name_developer">Mauricio García</string>
+    <string name="developer_title">Developer</string>
+    <string name="update_title">Update</string>
+    <string name="last_update">Last update: March 13, 2020</string>
+    <string name="info_title">Information</string>
 </resources>

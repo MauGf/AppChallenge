@@ -1,26 +1,50 @@
 [
   {
     "name": "Kyle",
-    "meetings": ["1:30PM", "2:30PM", "6PM"]
+    "meeting1": "1:30PM",
+    "meeting2": "2:30PM",
+    "meeting3": "6PM",
+    "meeting4": " ",
+    "meeting5": " "
   },
   {
     "name": "Paul",
-    "meetings": ["7AM", "9AM", "1:30PM", "3PM", "3:30PM"]
+    "meeting1": "7AM",
+    "meeting2": "9AM",
+    "meeting3": "1:30PM",
+    "meeting4": "3PM",
+    "meeting5": "3:30PM"
   },
   {
     "name": "Alex",
-    "meetings": ["8AM", "9:30AM", "12:30PM", "3PM"]
+    "meeting1": "8AM",
+    "meeting2": "9:30AM",
+    "meeting3": "12:30PM",
+    "meeting4": "3PM",
+    "meeting5": " "
   },
   {
     "name": "Luis",
-    "meetings": ["9AM", "1:30PM", "3PM", "3:30PM"]
+    "meeting1": "9AM",
+    "meeting2": "1:30PM",
+    "meeting3": "3PM",
+    "meeting4": "3:30PM",
+    "meeting5": " "
   },
   {
     "name": "Jairo",
-    "meetings": ["8AM", "9AM", "6PM"]
+    "meeting1": "8AM",
+    "meeting2": "9AM",
+    "meeting3": "6PM",
+    "meeting4": " ",
+    "meeting5": " "
   },
   {
     "name": "Sonya",
-    "meetings": ["8AM", "12:30PM", "1:30PM", "3:30PM"]
+    "meeting1": "8AM",
+    "meeting2":"12:30PM",
+    "meeting3":"1:30PM",
+    "meeting4":"3:30PM",
+    "meeting5": " "
   }
 ]

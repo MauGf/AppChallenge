@@ -48,13 +48,13 @@
                 android:textColor="#263238"
                 android:textSize="16sp" />
 
-          <!--  <com.maugarciaf.employeemeeting.customfonts.CTextViewSansBold
+           <com.maugarciaf.employeemeeting.customfonts.CTextViewSansBold
                 android:id="@+id/txt_available"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Available Employyes"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp" />-->
+                android:textSize="12sp" />
 
             <me.gujun.android.taggroup.TagGroup
                 android:id="@+id/employees"

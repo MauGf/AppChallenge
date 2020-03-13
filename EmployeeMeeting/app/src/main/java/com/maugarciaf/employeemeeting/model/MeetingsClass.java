@@ -3,7 +3,7 @@ package com.maugarciaf.employeemeeting.model;
 /*import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;*/
 
-public class MeetingsPojo {
+public class MeetingsClass {
 
     private String name;
     private String meeting1;
@@ -12,10 +12,10 @@ public class MeetingsPojo {
     private String meeting4;
     private String meeting5;
 
-    public MeetingsPojo() {
+    public MeetingsClass() {
     }
 
-    public MeetingsPojo(String name, String meeting1, String meeting2, String meeting3, String meeting4, String meeting5) {
+    public MeetingsClass(String name, String meeting1, String meeting2, String meeting3, String meeting4, String meeting5) {
         this.name = name;
         this.meeting1 = meeting1;
         this.meeting2 = meeting2;
